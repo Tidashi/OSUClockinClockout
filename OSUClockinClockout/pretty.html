@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yorke Gay System Configuration</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 200px;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <label for="username">Username:</label>
+    <input type="text" id="username" placeholder="Enter username"><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="Enter password"><br>
+
+    <label for="clockIn">Clock in:</label>
+    <input type="text" id="clockIn" placeholder="Enter clock in time"><br>
+
+    <label for="clockOut">Clock Out:</label>
+    <input type="text" id="clockOut" placeholder="Enter clock out time"><br>
+
+    <button id="startAutomation">Start Automation</button>
+
+    <script>
+        // Add any JavaScript logic here, e.g., handling button click events
+        var startAutomationButton = document.getElementById('startAutomation');
+        startAutomationButton.addEventListener('click', function() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var clockIn = document.getElementById('clockIn').value;
+            var clockOut = document.getElementById('clockOut').value;
+
+            // Call Python function passing the values (you need to integrate this with pysciter)
+            // You need to establish communication between Python and Sciter for this to work
+            // This script will only work when integrated with the pysciter framework.
+            window.external.invoke(username, password, clockIn, clockOut);
+        });
+    </script>
+</body>
+</html>
